@@ -1,0 +1,8 @@
+nginx-proxy:
+  image: jwilder/nginx-proxy
+  restart: always
+  volumes:
+    - /var/run/docker.sock:/tmp/docker.sock:ro
+    - ./proxy.conf:/etc/nginx/conf.d/my_proxy.conf:ro
+  ports:
+    - "80:80"
